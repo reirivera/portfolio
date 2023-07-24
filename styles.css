@@ -50,12 +50,20 @@ a:hover{
 header h1 {
     font-weight: 300;
     font-size: 4rem;
+    margin-bottom: 10px;
 }
 
 p {
     font-size: 1.5rem;
     margin: 0 0 40px 0; 
     color: #ADADAD;
+}
+
+.project-txt{
+    color: #1b1b1b;
+}
+
+.container-project{
 }
 
 .works{
