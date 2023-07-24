@@ -5,7 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diego Benavides Ortiz - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ... (existing CSS styles) ... */
+
+        .moving-circle {
+            width: 300px;
+            height: 300px;
+            background-color: #FF5245; /* You can change the color here */
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            transition: left 3s ease, top 3s ease; /* Add transition for smooth sliding */
+            pointer-events: none; /* Make the circle non-interactive */
+            z-index: -1; /* Set a lower z-index to make sure it's behind other elements */
+        }
+
+    </style>
 </head>
+</head>
+
 <body>
     <nav>
         <p>Diego Benavides Ortiz</p>
@@ -41,6 +59,35 @@
             <li><a href="https://www.behance.net/diegobenavid">Behance</a></li>
         </ul>
     </footer>
+    <div class="moving-circle"></div>
+    <script>
+        // JavaScript to handle the circle's movement with scroll
+        const circle = document.querySelector('.moving-circle');
+        let angle = 0;
 
+        function updateCirclePosition() {
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            const circleSize = 300;
+            const offset = 20;
+            const centerX = viewportWidth / 2;
+            const centerY = viewportHeight / 2;
+            const radius = Math.min(centerX, centerY) - circleSize / 2;
+
+            angle += 0.050; // Adjust this value to control the speed of rotation
+
+            const targetX = centerX + radius * Math.cos(angle);
+            const targetY = centerY + radius * Math.sin(angle);
+
+            circle.style.left = `${targetX}px`;
+            circle.style.top = `${targetY}px`;
+        }
+
+        // Call the updateCirclePosition() function initially to position the circle
+        updateCirclePosition();
+
+        window.addEventListener('scroll', updateCirclePosition);
+        window.addEventListener('resize', updateCirclePosition);
+    </script>
 </body>
 </html>
