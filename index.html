@@ -59,8 +59,8 @@
     </footer>
     <div class="moving-circle"></div>
     <script>
-        // JavaScript to handle the circle's movement with scroll
-        const circle = document.querySelector('.moving-circle');
+       // JavaScript to handle the circle's movement with scroll and cursor tracking
+       const circle = document.querySelector('.moving-circle');
         let angle = 0;
 
         function updateCirclePosition() {
@@ -86,6 +86,24 @@
 
         window.addEventListener('scroll', updateCirclePosition);
         window.addEventListener('resize', updateCirclePosition);
+
+        // Additional code to track mouse movement and update circle position
+        window.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            const radius = Math.min(centerX, centerY) - 100; // Adjust the distance from the cursor
+
+            const angle = Math.atan2(mouseY - centerY, mouseX - centerX);
+
+            const targetX = centerX + radius * Math.cos(angle);
+            const targetY = centerY + radius * Math.sin(angle);
+
+            circle.style.left = `${targetX}px`;
+            circle.style.top = `${targetY}px`;
+        });
     </script>
 </body>
 </html>
