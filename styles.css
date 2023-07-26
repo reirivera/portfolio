@@ -70,6 +70,12 @@ p {
     justify-content: center;
 }
 
+.video{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 img{
     width: 100%;
     border: #1b1b1b solid 1px;
