@@ -20,6 +20,7 @@ nav ul {
     display: flex;
     justify-content: space-between;
     margin: 0;
+    padding: 0;
 }
 
 nav li {
@@ -101,12 +102,11 @@ img{
     font-weight: 200;
 }
 
+/* Common styles for all screen sizes */
 footer {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
-    position: relative;
-    bottom: -50px;
 }
 
 footer h2 {
@@ -117,11 +117,16 @@ footer h2 {
 footer ul {
     list-style: none;
     display: flex;
-    justify-content:flex-end;
+    justify-content: flex-end;
+    margin: 0;
+    flex-grow: 1;
+    gap: 10px;
+    padding: 0;
+    text-align: center;
 }
 
 footer li {
-   padding-left: 50px;
+    margin-left: 50px;
 }
 
 footer a {
@@ -129,3 +134,172 @@ footer a {
     text-decoration: none;
     font-size: 1.5rem;
 }
+
+/* Media query for screens between 600px and 1200px (Tablets) */
+@media (min-width: 600px) and (max-width: 1200px) {
+    body {
+        margin: 20px; /* Adjust the margin for tablet screens */
+    }
+    nav li {
+        padding-left: 12px;
+    }
+    nav a {
+        font-size: 1rem;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1rem;
+        line-height: 20px;
+        margin: 0 0 20px 0;
+    }
+    .works {
+        max-width: 100%;
+    }
+    .works-h1 {
+        font-size: 1rem;
+        margin: 20px 0;
+    }
+    .works-text {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+    }
+    footer {
+        flex-direction: row; /* Reset to default flex-direction */
+        justify-content: space-between; /* Reset to default justify-content */
+        align-items: center; /* Center items vertically */
+        font-size: 1rem; /* Adjust the font size for the footer */
+    }
+
+    footer ul {
+        justify-content: flex-end; /* Align the list items to the right */
+        gap: 10px;
+    }
+
+    footer li {
+        padding-left: 12px; /* Adjust the left padding for list items */
+        margin: 0; /* Remove the margin between list items */
+    }
+
+    footer h2 {
+        font-size: 2rem; /* Adjust the font size for the h2 element */
+    }
+
+    footer a {
+        font-size: 1.2rem; /* Adjust the font size for the anchor links */
+    }
+}
+
+
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    body{
+        margin: 20px 40px 20px 40px;
+    }
+    nav li {
+        padding-left: 30px;
+    }
+    nav a {
+        font-size: 1rem;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1rem;
+        line-height: 20px;
+    }
+    .works {
+        max-width: 100%;
+    }
+    .works-h1 {
+        font-size: 1rem;
+    }
+    .works-text {
+        font-size: 1.5rem;
+    }
+    footer h2 {
+        font-size: 1rem;
+    }
+    footer a {
+        font-size: 1rem;
+    }
+    footer li {
+        gap: 12px;
+     }
+     footer a {
+        font-size: 1rem;
+    }
+}
+
+/* Media query for smaller screens (phones with max width 300px) */
+@media (max-width: 300px) {
+    body {
+        margin: 10px;
+        padding: 0;
+    }
+    nav {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+    nav li {
+        padding-left: 12px;
+    }
+    nav a {
+        font-size: 0.9rem;
+        text-align: center; /* Center the text in the nav */
+    }
+    header h1 {
+        font-size: 1.8rem;
+        text-align: center; /* Center the header text */
+    }
+    p {
+        font-size: 0.9rem;
+        line-height: 18px;
+        margin: 0 0 20px 0;
+        text-align: center; /* Center the paragraphs */
+    }
+    .works {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+    .works-h1 {
+        font-size: 0.9rem;
+        margin: 20px 0;
+        text-align: center; /* Center the works header */
+    }
+    .works-text {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+        text-align: center; /* Center the works text */
+    }
+    footer {
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Center items vertically */
+    }
+
+    footer ul {
+        justify-content: center; /* Center the list items */
+        margin-top: -13px;
+        gap: 2px; /* Add some space between the stacked items */
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer li {
+        margin: 6px 0; /* Adjust the vertical spacing between the stacked items */
+    }
+
+    footer h2 {
+        font-size: 1rem;
+    }
+
+    footer a {
+        font-size: 1rem;
+    }
+}
+
+
