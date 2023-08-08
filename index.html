@@ -5,22 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diego Benavides Ortiz - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* ... (existing CSS styles) ... */
-
-        .moving-circle {
-            width: 300px;
-            height: 300px;
-            background-color: #FF5245; /* You can change the color here */
-            border-radius: 50%;
-            position: fixed;
-            transform: translate(-50%, -50%);
-            transition: left 2s ease, top 2s ease; /* Add transition for smooth sliding */
-            pointer-events: none; /* Make the circle non-interactive */
-            z-index: -1; /* Set a lower z-index to make sure it's behind other elements */
-        }
-
-    </style>
 </head>
 </head>
 
@@ -29,7 +13,7 @@
         <a href="index.html"><p>Diego Benavides Ortiz</p></a>
         <ul>
             <li><a href="about.html">about</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="mailto:diego.benavides.ortiz@hotmail.com">Contact</a></li>
         </ul>
     </nav>
     <header>
@@ -57,58 +41,6 @@
             <li><a href="https://www.behance.net/diegobenavid">Behance</a></li>
         </ul>
     </footer>
-    <div class="moving-circle"></div>
-    <script>
-        // JavaScript to handle the circle's movement with scroll and cursor tracking
-        const circle = document.querySelector('.moving-circle');
-        let angle = 0;
-        let centerX = window.innerWidth / 2;
-        let centerY = window.innerHeight / 2;
-      
-        function updateCirclePosition() {
-          const viewportWidth = window.innerWidth;
-          const viewportHeight = window.innerHeight;
-          const circleSize = 300;
-          const offset = 20;
-          centerX = viewportWidth / 2;
-          centerY = viewportHeight / 2;
-          const radius = Math.min(centerX, centerY) - circleSize / 2;
-      
-          angle += 0.050; // Adjust this value to control the speed of rotation
-      
-          const targetX = centerX + radius * Math.cos(angle);
-          const targetY = centerY + radius * Math.sin(angle);
-      
-          circle.style.left = `${targetX}px`;
-          circle.style.top = `${targetY}px`;
-        }
-      
-        // Call the updateCirclePosition() function initially to position the circle
-        updateCirclePosition();
-      
-        window.addEventListener('scroll', updateCirclePosition);
-      
-        // Additional code to track mouse movement and update circle position
-        window.addEventListener('mousemove', (e) => {
-          const mouseX = e.clientX;
-          const mouseY = e.clientY;
-      
-          const radius = Math.min(centerX, centerY) - 50; // Adjust the distance from the cursor
-      
-          const angle = Math.atan2(mouseY - centerY, mouseX - centerX);
-      
-          const targetX = centerX + radius * Math.cos(angle);
-          const targetY = centerY + radius * Math.sin(angle);
-      
-          circle.style.left = `${targetX}px`;
-          circle.style.top = `${targetY}px`;
-        });
-      
-        // Function to recalculate the circle position on window resize
-        window.addEventListener('resize', () => {
-          updateCirclePosition();
-        });
-      </script>
       
 </body>
 </html>

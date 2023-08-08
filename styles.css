@@ -39,8 +39,8 @@ a:hover{
 }
 
 .highlight{
+    color: #ADADAD;
     text-decoration: none;
-    color: #1b1b1b;
 }
 a:hover{
     color: #F7F7F7;
@@ -62,7 +62,9 @@ p {
 }
 
 .project-txt{
-    color: #5c5c5c;
+    line-height: 30px;
+    color: #1b1b1b;
+    text-align: justify;
     text-transform: none;
 }
 
@@ -147,12 +149,16 @@ footer a {
         font-size: 1rem;
     }
     header h1 {
-        font-size: 2rem;
+        font-size: 4rem;
     }
     p {
         font-size: 1rem;
         line-height: 20px;
         margin: 0 0 20px 0;
+    }
+    .project-txt{
+        font-size: 1.5rem;
+        line-height: 30px;
     }
     .works {
         max-width: 100%;
@@ -205,11 +211,15 @@ footer a {
         font-size: 1rem;
     }
     header h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
     p {
         font-size: 1rem;
         line-height: 20px;
+    }
+    .project-txt{
+        font-size: 1rem;
+        line-height: 25px;
     }
     .works {
         max-width: 100%;
