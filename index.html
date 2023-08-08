@@ -6,42 +6,66 @@
     <title>Diego Benavides Ortiz - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-</head>
 
 <body>
     <nav>
         <a class="nav_dbo" href="index.html"><p>DBO</p></a>
         <ul>
-            <li><a href="about.html">about</a></li>
-            <li><a href="mailto:diego.benavides.ortiz@hotmail.com">Contact</a></li>
-            <li><a href="img/cv_ang.pdf">résumé</a></li>
+            <li><a href="about.html" class="animate">about</a></li>
+            <li><a href="mailto:diego.benavides.ortiz@hotmail.com" class="animate">Contact</a></li>
+            <li><a href="img/cv_ang.pdf" class="animate">résumé</a></li>
         </ul>
     </nav>
-    <header>
+    <header class="animate">
         <h1>Hello world! I’m <a class="highlight" href="about.html">Diego</a>, <br> a passionate graphic designer <br>based in Montreal, QC.</h1>
     </header>
     
-    <section class="works">
-        <h1 class="works-h1">selected works</h1>
-        <a href="studio_num.html" class="works-text" id="">studio numérique</a>
-        <a href="spotify.html" class="works-text" id="">festival spotify</a>
-        <a href="leader.html" class="works-text" id="">leader</a>
-        <a href="tel-jeunes.html" class="works-text" id="">tel-jeunes</a>
-        <a href="viceversa.html" class="works-text" id="">vice versa</a>
-        <a href="dlm.html" class="works-text" id="">pupuseria dlm</a>
-        <a href="animations.html" class="works-text" id="">animations</a>
-        <a href="propair.html" class="works-text" id="">propair</a>
-        <a href="war.html" class="works-text" id="">war room</a>
+    <section class="works animate">
+        <h1 class="works-h1 animate">selected works</h1>
+        <a href="studio_num.html" class="works-text animate" id="">studio numérique</a>
+        <a href="spotify.html" class="works-text animate" id="">festival spotify</a>
+        <a href="leader.html" class="works-text animate" id="">leader</a>
+        <a href="tel-jeunes.html" class="works-text animate" id="">tel-jeunes</a>
+        <a href="viceversa.html" class="works-text animate" id="">vice versa</a>
+        <a href="dlm.html" class="works-text animate" id="">pupuseria dlm</a>
+        <a href="animations.html" class="works-text animate" id="">animations</a>
+        <a href="propair.html" class="works-text animate" id="">propair</a>
+        <a href="war.html" class="works-text animate" id="">war room</a>
     </section>
 
-    <footer>
-        <h2 class="footer">Get in touch</h2>
+    <footer class="animate">
+        <h2 class="footer animate">Get in touch</h2>
         <ul>
-            <li><a href="mailto:diego.benavides.ortiz@hotmail.com">Email</a></li>
-            <li><a href="https://www.instagram.com/your_instagram_username/">Instagram</a></li>
-            <li><a href="https://www.behance.net/diegobenavid">Behance</a></li>
+            <li><a href="mailto:diego.benavides.ortiz@hotmail.com" class="animate">Email</a></li>
+            <li><a href="https://www.instagram.com/your_instagram_username/" class="animate">Instagram</a></li>
+            <li><a href="https://www.behance.net/diegobenavid" class="animate">Behance</a></li>
         </ul>
     </footer>
-      
+    <script>
+        window.onload = function() {
+            const animatedElements = document.querySelectorAll('.animate');
+
+            const fadeIn = () => {
+                animatedElements.forEach(element => {
+                    if (isElementInViewport(element)) {
+                        element.classList.add('animated');
+                    }
+                });
+            };
+
+            const isElementInViewport = (element) => {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            };
+
+            window.addEventListener('scroll', fadeIn);
+            fadeIn();
+        };
+    </script>
 </body>
 </html>
