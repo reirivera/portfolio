@@ -105,10 +105,116 @@ img{
 }
 
 /* Common styles for all screen sizes */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 20px; /* Adjust the margin for better spacing */
+    padding: 0;
+    color: #1b1b1b;
+    text-transform: uppercase;
+    background-color: #F7F7F7;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    padding-left: 12px; /* Adjust padding for better spacing */
+}
+
+nav a {
+    color: #ADADAD;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: #1b1b1b;
+}
+
+.highlight {
+    color: #ADADAD;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #F7F7F7;
+    text-decoration: line-through #1b1b1b 1em;
+}
+
+header h1 {
+    font-weight: 300;
+    font-size: 3rem; /* Adjust font size for better spacing */
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 20px; /* Adjust line height for better readability */
+    margin: 0 0 20px 0; /* Adjust margin for better spacing */
+    color: #ADADAD;
+}
+
+.project-txt {
+    line-height: 25px; /* Adjust line height for better readability */
+    color: #1b1b1b;
+    text-align: justify;
+    text-transform: none;
+}
+
+.container-project {
+    display: flex;
+    justify-content: center;
+}
+
+.video {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+    border: #1b1b1b solid 1px;
+}
+
+.works {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%; /* Adjust max-width for responsiveness */
+}
+
+.works-h1 {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 20px 0; /* Adjust margin for better spacing */
+    color: #ADADAD;
+}
+
+.works-text {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #1b1b1b;
+    font-weight: 200;
+}
+
+/* Common styles for all screen sizes */
 footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1rem; /* Adjust font size for better spacing */
 }
 
 footer h2 {
@@ -128,179 +234,78 @@ footer ul {
 }
 
 footer li {
-    margin-left: 50px;
+    margin-left: 12px; /* Adjust margin for better spacing */
 }
 
 footer a {
     color: #ADADAD;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Adjust font size for better spacing */
 }
 
 /* Media query for screens between 600px and 1200px (Tablets) */
-@media (min-width: 600px) and (max-width: 1200px) {
-    body {
-        margin: 20px; /* Adjust the margin for tablet screens */
-    }
-    nav li {
-        padding-left: 12px;
-    }
-    nav a {
-        font-size: 1rem;
-    }
+@media (max-width: 1200px) {
     header h1 {
-        font-size: 4rem;
+        font-size: 2.5rem; /* Adjust font size for better spacing */
     }
+
     p {
-        font-size: 1rem;
-        line-height: 20px;
-        margin: 0 0 20px 0;
+        line-height: 25px; /* Adjust line height for better readability */
     }
-    .project-txt{
-        font-size: 1.5rem;
-        line-height: 30px;
-    }
-    .works {
-        max-width: 100%;
-    }
-    .works-h1 {
-        font-size: 1rem;
-        margin: 20px 0;
-    }
+
     .works-text {
         font-size: 1.5rem;
         margin-bottom: 12px;
     }
-    footer {
-        flex-direction: row; /* Reset to default flex-direction */
-        justify-content: space-between; /* Reset to default justify-content */
-        align-items: center; /* Center items vertically */
-        font-size: 1rem; /* Adjust the font size for the footer */
-    }
-
-    footer ul {
-        justify-content: flex-end; /* Align the list items to the right */
-        gap: 10px;
-    }
-
-    footer li {
-        padding-left: 12px; /* Adjust the left padding for list items */
-        margin: 0; /* Remove the margin between list items */
-    }
-
-    footer h2 {
-        font-size: 2rem; /* Adjust the font size for the h2 element */
-    }
-
-    footer a {
-        font-size: 1.2rem; /* Adjust the font size for the anchor links */
-    }
 }
-
-
 
 /* Media query for smaller screens */
 @media (max-width: 600px) {
-    body{
-        margin: 20px 40px 20px 40px;
-    }
-    nav li {
-        padding-left: 30px;
-    }
-    nav a {
-        font-size: 1rem;
-    }
     header h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
+
     p {
+        font-size: 0.9rem;
+        line-height: 18px;
+    }
+
+    .project-txt {
         font-size: 1rem;
         line-height: 20px;
     }
-    .project-txt{
-        font-size: 1rem;
-        line-height: 25px;
-    }
-    .works {
-        max-width: 100%;
-    }
-    .works-h1 {
-        font-size: 1rem;
-    }
+
     .works-text {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
+
     footer h2 {
         font-size: 1rem;
     }
+
     footer a {
         font-size: 1rem;
     }
+
     footer li {
         gap: 12px;
-     }
-     footer a {
-        font-size: 1rem;
     }
 }
 
 /* Media query for smaller screens (phones with max width 300px) */
 @media (max-width: 300px) {
-    body {
-        margin: 10px;
-        padding: 0;
-    }
-    nav {
-        flex-direction: column; /* Stack nav items vertically */
-        align-items: center; /* Center items horizontally */
-    }
-    nav li {
-        padding-left: 12px;
-    }
-    nav a {
-        font-size: 0.9rem;
-        text-align: center; /* Center the text in the nav */
-    }
     header h1 {
         font-size: 1.8rem;
-        text-align: center; /* Center the header text */
     }
+
     p {
         font-size: 0.9rem;
         line-height: 18px;
-        margin: 0 0 20px 0;
-        text-align: center; /* Center the paragraphs */
     }
-    .works {
-        max-width: 100%;
-        margin-bottom: 10px;
-    }
-    .works-h1 {
-        font-size: 0.9rem;
-        margin: 20px 0;
-        text-align: center; /* Center the works header */
-    }
+
     .works-text {
         font-size: 1.3rem;
         margin-bottom: 12px;
-        text-align: center; /* Center the works text */
-    }
-    footer {
-        flex-direction: column; /* Stack items vertically */
-        justify-content: center; /* Center items vertically */
-    }
-
-    footer ul {
-        justify-content: center; /* Center the list items */
-        margin-top: -13px;
-        gap: 2px; /* Add some space between the stacked items */
-        flex-wrap: wrap; /* Allow items to wrap to the next line */
-        flex-direction: column;
-        text-align: center;
-    }
-
-    footer li {
-        margin: 6px 0; /* Adjust the vertical spacing between the stacked items */
     }
 
     footer h2 {
@@ -311,5 +316,3 @@ footer a {
         font-size: 1rem;
     }
 }
-
-
